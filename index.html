@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Local Server Connection</title>
+</head>
+<body>
+<h1>Local Server Connection</h1>
+<button onclick="connectToLocalServer()">Mit Local Server verbinden</button>
+
+<script>
+    function connectToLocalServer() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "http://localhost:8080", true); // Hier musst du die URL deines lokalen Servers eingeben
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                alert("Erfolgreich mit dem lokalen Server verbunden!");
+            }
+        };
+        xhr.send();
+    }
+</script>
+</body>
+</html>
